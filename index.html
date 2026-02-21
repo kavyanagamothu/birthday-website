@@ -17,7 +17,7 @@
 
   <!-- MESSAGE -->
   <section class="message">
-    <h2>💌 A Note for You</h2>
+    <h2>💖 A Note for You</h2>
     <p>
       Every moment with you is special.  
       Thank you for being my strength, my happiness, and my forever.  
@@ -29,41 +29,32 @@
   <section class="gallery">
     <h2>📸 Our Memories</h2>
     <div class="photos">
-      <img src="assets/photos/1.jpg" />
-      <img src="assets/photos/2.jpg" />
-      <img src="assets/photos/3.jpg" />
+      <img src="assets/photos/1.jpg" alt="Memory 1" />
+      <img src="assets/photos/2.jpg" alt="Memory 2" />
+      <img src="assets/photos/3.jpg" alt="Memory 3" />
     </div>
   </section>
 
-  <!-- EMAIL -->
-  <section class="email">
-    <h2>💖 Send Him a Birthday Wish</h2>
+  <!-- EMAIL FORM (SENDER ONLY) -->
+  <section class="email" id="emailSection">
+    <h2>💌 Send Him a Birthday Wish</h2>
 
     <form id="emailForm">
       <input type="text" name="from_name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-
-      <!-- LINK THAT OPENS THE BIRTHDAY PAGE -->
-      <input
-        type="hidden"
-        name="birthday_link"
-        value="https://github.com/kavyanagamothu/birthday-website"
-      />
-
-      <button type="submit">Send Love 💌</button>
+      <button type="submit">Send Love 💖</button>
     </form>
 
     <p id="status"></p>
   </section>
 
   <footer>
-    Made with ❤️ for my husband
+    Made with ❤️ just for you
   </footer>
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="script.js"></script>
-
 </body>
 </html>
