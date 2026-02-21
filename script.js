@@ -10,7 +10,9 @@ if (params.get("send") === "true") {
   emailSection.style.display = "block";
 }
 
-
+document.getElementById("birthdayLink").value =
+  "https://kavyanagamothu.github.io/birthday-website/";
+  
 document.getElementById("emailForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
