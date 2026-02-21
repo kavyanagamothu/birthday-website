@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday ❤️</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Happy Birthday My Love 🎂</h1>
+    <p>You make my world brighter every single day</p>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="message">
+    <h2>💌 A Note for You</h2>
+    <p>
+      Every moment with you is special.  
+      Thank you for being my strength, my happiness, and my forever.  
+      I love you more than words can say.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <h2>📸 Our Memories</h2>
+    <div class="photos">
+      <img src="assets/photos/1.jpg" />
+      <img src="assets/photos/2.jpg" />
+      <img src="assets/photos/3.jpg" />
+    </div>
+  </section>
+
+  <!-- EMAIL -->
+  <section class="email">
+    <h2>💖 Send Him a Birthday Wish</h2>
+
+    <form id="emailForm">
+      <input type="text" name="from_name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <!-- LINK THAT OPENS THE BIRTHDAY PAGE -->
+      <input
+        type="hidden"
+        name="birthday_link"
+        value="https://github.com/kavyanagamothu/birthday-website"
+      />
+
+      <button type="submit">Send Love 💌</button>
+    </form>
+
+    <p id="status"></p>
+  </section>
+
+  <footer>
+    Made with ❤️ for my husband
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
