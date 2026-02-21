@@ -7,12 +7,12 @@ const emailSection = document.getElementById("emailSection");
 
 // Only show form when ?send=true
 if (params.get("send") === "true") {
-  emailSection.style.display = "block";
+  emailSection.style.display = "none";
 }
 
 document.getElementById("birthdayLink").value =
-  "https://kavyanagamothu.github.io/birthday-website/";
-  
+  "https://kavyanagamothu.github.io/birthday-website/?send=true";
+
 document.getElementById("emailForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
