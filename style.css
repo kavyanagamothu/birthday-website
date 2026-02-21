@@ -10,6 +10,7 @@ body {
   color: #333;
 }
 
+/* SECTIONS */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -23,11 +24,11 @@ section {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
 }
 
 .hero p {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 1.2rem;
 }
 
@@ -55,7 +56,11 @@ section {
   border-radius: 12px;
 }
 
-/* EMAIL */
+/* EMAIL FORM */
+.email {
+  display: block;
+}
+
 .email form {
   max-width: 400px;
   margin: auto;
@@ -78,6 +83,7 @@ section {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .email button:hover {
