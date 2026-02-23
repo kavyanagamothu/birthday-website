@@ -8,12 +8,38 @@
 body {
   background: #fafafa;
   color: #333;
+  overflow-x: hidden;
 }
 
-/* SECTIONS */
-section {
-  padding: 60px 20px;
-  text-align: center;
+/* FADE ANIMATION */
+.fade-in {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BALLOONS */
+.balloons span {
+  position: fixed;
+  bottom: -100px;
+  font-size: 3rem;
+  animation: floatUp 10s linear infinite;
+}
+
+.balloons span:nth-child(1) { left: 10%; }
+.balloons span:nth-child(2) { left: 30%; animation-delay: 2s; }
+.balloons span:nth-child(3) { left: 50%; animation-delay: 4s; }
+.balloons span:nth-child(4) { left: 70%; animation-delay: 1s; }
+.balloons span:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
 }
 
 /* HERO */
@@ -21,6 +47,7 @@ section {
   background: linear-gradient(to right, #ff758c, #ff7eb3);
   color: white;
   padding: 100px 20px;
+  text-align: center;
 }
 
 .hero h1 {
@@ -32,15 +59,32 @@ section {
   font-size: 1.2rem;
 }
 
-/* MESSAGE */
-.message {
-  max-width: 800px;
-  margin: auto;
+.hero button {
+  margin-top: 25px;
 }
 
-.message p {
-  margin-top: 20px;
-  line-height: 1.6;
+/* BUTTON */
+button {
+  background: #ff758c;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff5a7a;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 117, 140, 0.8);
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
 /* GALLERY */
@@ -54,13 +98,14 @@ section {
 .photos img {
   width: 100%;
   border-radius: 12px;
+  transition: 0.5s;
 }
 
-/* EMAIL FORM */
-.email {
-  display: block;
+.photos img:hover {
+  transform: scale(1.1) rotate(2deg);
 }
 
+/* EMAIL */
 .email form {
   max-width: 400px;
   margin: auto;
@@ -76,18 +121,26 @@ section {
   border: 1px solid #ccc;
 }
 
-.email button {
-  background: #ff758c;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
+/* CAKE */
+.cake {
+  position: fixed;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6rem;
+  opacity: 0;
+  transition: 1s;
 }
 
-.email button:hover {
-  background: #ff5a7a;
+.cake.show {
+  bottom: 50%;
+  opacity: 1;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -20px); }
 }
 
 /* FOOTER */
@@ -95,11 +148,4 @@ footer {
   padding: 20px;
   background: #eee;
   font-size: 14px;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
 }
