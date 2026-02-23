@@ -9,14 +9,21 @@
 </head>
 <body>
 
+  <!-- BALLOONS -->
+  <div class="balloons">
+    <span>🎈</span><span>🎈</span><span>🎈</span>
+    <span>🎈</span><span>🎈</span>
+  </div>
+
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero fade-in">
     <h1>Happy Birthday My Love 🎂</h1>
     <p>You make my world brighter every single day</p>
+    <button id="celebrateBtn">Celebrate 🎉</button>
   </section>
 
   <!-- MESSAGE -->
-  <section class="message">
+  <section class="message fade-in">
     <h2>💖 A Note for You</h2>
     <p>
       Every moment with you is special.  
@@ -26,7 +33,7 @@
   </section>
 
   <!-- GALLERY -->
-  <section class="gallery">
+  <section class="gallery fade-in">
     <h2>📸 Our Memories</h2>
     <div class="photos">
       <img src="assets/photos/1.jpg" alt="Memory 1" />
@@ -35,21 +42,23 @@
     </div>
   </section>
 
-  <!-- EMAIL FORM (SENDER ONLY) -->
-  <section class="email" id="emailSection">
+  <!-- EMAIL -->
+  <section class="email fade-in" id="emailSection">
     <h2>💌 Send Him a Birthday Wish</h2>
 
     <form id="emailForm">
       <input type="text" name="from_name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-       <input type="hidden" name="birthday_link" id="birthdayLink"/>
-
+      <input type="hidden" name="birthday_link" id="birthdayLink"/>
       <button type="submit">Send Love 💖</button>
     </form>
 
     <p id="status"></p>
   </section>
+
+  <!-- CAKE -->
+  <div class="cake" id="cake">🎂</div>
 
   <footer>
     Made with ❤️ just for you
