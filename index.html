@@ -2,69 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday ❤️</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body style="padding: 20px;">
 
-  <!-- BALLOONS -->
-  <div class="balloons">
-    <span>🎈</span><span>🎈</span><span>🎈</span>
-    <span>🎈</span><span>🎈</span>
+  <!-- floating animations -->
+<div class="hearts"></div>
+<div class="flowers"></div>
+
+  <!-- 🎬 INTRO -->
+  <div class="intro" id="intro">
+    <h1>Hey You ❤️</h1>
+    <p>
+      Before the world says Happy Birthday…
+      Before the phone buzzes with wishes…
+      I wanted to be first.
+      Because you deserve to feel loved
+      before anyone else says a word 💫
+    </p>
+    <button id="startBtn">Take my hand 🤍</button>
   </div>
 
-  <!-- HERO -->
-  <section class="hero fade-in">
-    <h1>Happy Birthday My Love 🎂</h1>
-    <p>You make my world brighter every single day</p>
-    <button id="celebrateBtn">Celebrate 🎉</button>
-  </section>
+  <!-- 🎵 MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="assests/music.mp3" type="audio/mpeg">
+  </audio>
 
-  <!-- MESSAGE -->
-  <section class="message fade-in">
-    <h2>💖 A Note for You</h2>
+  <!-- 💖 HERO -->
+  <section class="hero hidden">
+    <h1>Happy Birthday, My Love 🎂</h1>
     <p>
-      Every moment with you is special.  
-      Thank you for being my strength, my happiness, and my forever.  
-      I love you more than words can say.
+      Today the world got you.
+      And I got lucky enough to call you mine.
+      I don't take that lightly —
+      not even for a single second.
     </p>
+    <button id="celebrateBtn">Let me show you something ❤️</button>
   </section>
 
-  <!-- GALLERY -->
-  <section class="gallery fade-in">
-    <h2>📸 Our Memories</h2>
-    <div class="photos">
-      <img src="assets/photos/1.jpg" alt="Memory 1" />
-      <img src="assets/photos/2.jpg" alt="Memory 2" />
-      <img src="assets/photos/3.jpg" alt="Memory 3" />
+  <!-- 💌 LOVE LETTER -->
+  <section class="letter hidden fade">
+    <h2>💌 A Letter From My Heart</h2>
+    <p id="typeLetter"></p>
+  </section>
+
+  <!-- 🕰️ TIMELINE -->
+  <section class="timeline hidden" style="margin-top: 20px;">
+    <h2>🕰️ Our Journey</h2>
+    <div class="timeline-item">💖 The first time you made me feel safe just by being there</div>
+    <div class="timeline-item">✨ The moment I stopped imagining a future without you</div>
+    <div class="timeline-item">❤️ The day "us" started feeling like home</div>
+    <div class="timeline-item">🌙 Every 2am thought that ends with your name</div>
+    <div class="timeline-item">♾️ Every ordinary day I want to spend exactly like this — with you</div>
+  </section>
+
+  <!-- 🎂 CAKE -->
+  <div class="cake-overlay" id="cakeOverlay">
+    <div class="cake-modal">
+      <div class="cake">
+      <div class="candle">
+      <div class="flame"></div>
+      </div>
+      <img src="assests/cake.jpg">
+      </div>
+      <h2>Make a Wish 🎂</h2>
+      <p id="wish"></p>
+      <p>
+        Right now, somewhere in the world,
+        someone is wishing on every star
+        that you get everything your heart holds.
+        That someone is me ❤️
+      </p>
+    </div>
+  </div>
+
+  <!-- 🎧 VOICE -->
+  <section class="voice hidden" id="voiceNote">
+    <p>
+      Press play.
+      That’s the sound of someone who loves you completely —
+      messy days, silent mornings,
+      and everything in between.
+      You are so, so loved ❤️
+    </p>
+    <audio controls>
+      <source src="assests/voice.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <!-- 📸 MEMORIES -->
+  <section class="gallery hidden" id="memories">
+    <h2>Our Moments 💞</h2>
+    <p style="margin-bottom:24px;">
+      These photos don’t just hold memories.
+      They hold the version of us I never want to forget —
+      laughing too loud, saying nothing at all,
+      and choosing each other every single time 💞
+    </p>
+    <div class="memory-track">
+      <div class="memory-card">
+        <img src="assests/memory1.jpeg">
+        <p>This smile — I would do anything to keep it 💕</p>
+      </div>
+      <div class="memory-card">
+        <img src="assests/memory2.jpeg">
+        <p>The laugh I could pick out of a thousand rooms 😄</p>
+      </div>
+      <div class="memory-card">
+        <img src="assests/memory3.jpeg">
+        <p>Not a place. Just you. That’s where home is 🏡</p>
+      </div>
+      <div class="memory-card">
+        <img src="assests/memory4.jpeg">
+        <p>I hope I always remember exactly how this felt 🌸</p>
+      </div>
     </div>
   </section>
 
-  <!-- EMAIL -->
-  <section class="email fade-in" id="emailSection">
-    <h2>💌 Send Him a Birthday Wish</h2>
+  <!-- 🔮 FUTURE -->
+  <section class="future hidden">
+    <h2>🔮 A Promise</h2>
+    <p>
+      I promise to be the one who shows up.
+      On the hard days and the quiet ones.
+      On the days you doubt yourself most.
 
+      I promise to fight for us, not with you.
+      To hold space for your dreams
+      even when mine feel heavy.
+
+      This is more than love.
+      This is a choice I make every single morning —
+      and it will always be you ❤️
+    </p>
+  </section>
+
+  <!-- 📧 EMAIL -->
+  <section class="email" id="emailSection">
+    <h2>💌 Send Him One More Message</h2>
     <form id="emailForm">
-      <input type="text" name="from_name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="reply_to" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <input type="hidden" name="birthday_link" id="birthdayLink"/>
-      <button type="submit">Send Love 💖</button>
+      <button type="submit">Send With Love 💖</button>
     </form>
-
     <p id="status"></p>
   </section>
 
-  <!-- CAKE -->
-  <div class="cake" id="cake">🎂</div>
+  <!-- 🌙 END -->
+  <section class="ending">
+    <h2>🌙 One Last Thing…</h2>
+    <p>
+      Of all the lives I could be living,
+      this one — with you — is the one I'd choose every time.
 
-  <footer>
-    Made with ❤️ just for you
-  </footer>
+      Thank you for your patience, your warmth,
+      and the way you love me even when I make it hard.
 
-  <!-- EmailJS -->
+      Happy Birthday, my husband ❤️
+      I love you — today, tomorrow,
+      and in every version of forever.
+    </p>
+  </section>
+
+  <footer>Poured into this with all of my love ❤️</footer>
+
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>

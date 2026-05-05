@@ -1,151 +1,308 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
+#celebrateBtn{
+  width: 300px;
+}
+
+/* BODY */
 body {
-  background: #fafafa;
-  color: #333;
+  background: radial-gradient(circle at top, #ff8fab, #0b0b16);
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* FADE ANIMATION */
-.fade-in {
-  animation: fadeIn 1.5s ease;
+/* PAGE WRAPPER */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+/* COMMON */
+.hidden {
+  display: none;
 }
 
-/* BALLOONS */
-.balloons span {
-  position: fixed;
-  bottom: -100px;
-  font-size: 3rem;
-  animation: floatUp 10s linear infinite;
-}
-
-.balloons span:nth-child(1) { left: 10%; }
-.balloons span:nth-child(2) { left: 30%; animation-delay: 2s; }
-.balloons span:nth-child(3) { left: 50%; animation-delay: 4s; }
-.balloons span:nth-child(4) { left: 70%; animation-delay: 1s; }
-.balloons span:nth-child(5) { left: 90%; animation-delay: 3s; }
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
-}
-
-/* HERO */
-.hero {
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
-  color: white;
-  padding: 100px 20px;
+section {
+  padding: 64px 0;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 2.6rem;
+h1, h2 {
+  margin-bottom: 16px;
 }
 
-.hero p {
+p {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+/* INTRO */
+.intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+}
+
+.intro p {
   margin-top: 12px;
-  font-size: 1.2rem;
+  opacity: 0.8;
 }
 
-.hero button {
-  margin-top: 25px;
+.intro button {
+  margin-top: 24px;
 }
 
 /* BUTTON */
 button {
-  background: #ff758c;
-  color: white;
-  padding: 12px 25px;
+  padding: 14px 32px;
+  border-radius: 30px;
   border: none;
-  border-radius: 25px;
+  background: linear-gradient(135deg, #ff5a7a, #ff9aa2);
+  color: white;
+  font-size: 15px;
   cursor: pointer;
-  font-size: 16px;
   transition: 0.3s;
 }
 
 button:hover {
-  background: #ff5a7a;
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 117, 140, 0.8);
+  transform: scale(1.05);
 }
 
-/* SECTIONS */
-section {
-  padding: 60px 20px;
+/* HERO */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  animation:heartbeat 2s infinite;
+}
+
+@keyframes heartbeat{
+0%{transform:scale(1)}
+25%{transform:scale(1.05)}
+40%{transform:scale(1)}
+60%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:0}
+30%{opacity:1}
+100%{transform:translateY(-100vh);opacity:0}
+}
+
+/* FLOWERS */
+
+.flower{
+position:fixed;
+top:-10px;
+font-size:24px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{transform:translateY(100vh) rotate(360deg)}
+}
+
+/* CARD SECTIONS */
+.letter,
+.timeline,
+.future,
+.ending,
+.message {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* TIMELINE */
+.timeline-item {
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 14px;
+}
+
+/* CAKE MODAL */
+.cake-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  /* z-index: 9999; */
+}
+
+.cake-overlay.show {
+  display: flex;
+}
+
+.cake-modal {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 380px;
   text-align: center;
 }
 
-/* GALLERY */
-.photos {
+.cake-modal img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+.candle{
+width:10px;
+height:40px;
+background:white;
+margin:auto;
+position:relative;
+}
+
+.flame{
+width:14px;
+height:20px;
+background:orange;
+border-radius:50%;
+position:absolute;
+top:-18px;
+left:-2px;
+animation:flame 0.3s infinite alternate;
+}
+
+@keyframes flame{
+from{transform:scale(1)}
+to{transform:scale(1.2)}
+}
+
+/* VOICE */
+.voice audio {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 16px;
+}
+
+/* MEMORIES */
+.memory-track {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
+  gap: 20px;
+  max-width: 900px;
+  margin: 32px auto 0;
+  overflow: hidden;
 }
 
-.photos img {
+.memory-card img {
   width: 100%;
-  border-radius: 12px;
-  transition: 0.5s;
-}
-
-.photos img:hover {
-  transform: scale(1.1) rotate(2deg);
+  height: auto;
+  /* height: px; */
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 /* EMAIL */
 .email form {
-  max-width: 400px;
-  margin: auto;
+  max-width: 360px;
+  margin: 24px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
 .email input,
 .email textarea {
   padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-/* CAKE */
-.cake {
-  position: fixed;
-  bottom: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 6rem;
-  opacity: 0;
-  transition: 1s;
-}
-
-.cake.show {
-  bottom: 50%;
-  opacity: 1;
-  animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%,100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -20px); }
+  border-radius: 8px;
+  border: none;
 }
 
 /* FOOTER */
 footer {
-  padding: 20px;
-  background: #eee;
-  font-size: 14px;
+  padding: 32px 0;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+
+  section {
+    padding: 48px 0;
+  }
+
+  .letter,
+  .timeline,
+  .future,
+  .ending,
+  .message {
+    padding: 32px 16px;
+  }
+
+  .memory-card img {
+    height: 450px;
+  }
+
+  .intro h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero,
+  .letter,
+  .timeline,
+  .future,
+  .ending {
+    scroll-snap-align: start;
+  }
+
+  body {
+    scroll-snap-type: y mandatory;
+  }
 }
